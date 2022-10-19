@@ -2,8 +2,8 @@ const config = {
   themeRef: "test",
 };
 
-const { default: FormWrapper } = await import(
-  `./${config.themeRef}/FormWrapper`
-);
 
-export { FormWrapper };
+// read https://stackoverflow.com/questions/65370019/next-js-dynamic-import-vs-await-import
+const FormWrapper = import(`./${config.themeRef}/FormWrapper`);
+
+export {FormWrapper};

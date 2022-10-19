@@ -1,6 +1,8 @@
 const inTest = process.env.NODE_ENV === "test";
 
-console.log(inTest);
+// const inTest = process.env.NODE_ENV === "test";
+
+// console.log(inTest);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

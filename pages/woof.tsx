@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext } from "next/types";
 import { NextAuthOptions, unstable_getServerSession } from "next-auth";
 import { FormWrapper } from "../components/Elements";
-import { AuthOptions } from "../pages/auth";
+import AuthOptions from "../pages/auth";
 
 const TestPage = () => {
   return <FormWrapper></FormWrapper>;
@@ -13,11 +13,11 @@ export const getServerSideProps = async (
 
   // const errors = errorQuery ? [errorQuery].flat() : null;
 
-  const session = await unstable_getServerSession(
-    context.req,
-    context.res,
-    AuthOptions as NextAuthOptions
-  );
+  // const session = await unstable_getServerSession(
+  //   context.req,
+  //   context.res,
+  //   AuthOptions as NextAuthOptions
+  // );
 
   console.log("Run");
 

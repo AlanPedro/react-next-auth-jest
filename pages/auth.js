@@ -10,4 +10,4 @@ const AuthOptions = {
   ],
 };
 
-module.exports = { AuthOptions };
+export default AuthOptions
