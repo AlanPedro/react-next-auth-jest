@@ -10,11 +10,11 @@ const esModules = ["jose", "@panva"].join("|");
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 const customJestConfig = {
   // moduleNameMapper: {
-  //   jose: require.resolve("jose"),
-  //   "@panva": require.resolve("@panva/hkdf"),
+  // jose: require.resolve("jose"),
+  // "@panva": require.resolve("@panva/hkdf"),
   //   "next-auth": require.resolve("next-auth"),
   // },
-  transformIgnorePatterns: ["<rootDir>/node_modules/"],
+  transformIgnorePatterns: ["/node_modules/(?!jose)(.*)"],
   setupFilesAfterEnv: ["<rootDir>/setupFilesAfterEnv.ts"],
   moduleDirectories: ["node_modules", "<rootDir>/"],
   preset: "ts-jest/presets/default-esm",
@@ -30,4 +30,12 @@ const customJestConfig = {
   },
 };
 
-module.exports = createJestConfig(customJestConfig);
+const asyncConfig = createJestConfig(customJestConfig);
+
+module.exports = async () => {
+  const config = await asyncConfig();
+  config.transformIgnorePatterns = ["/node_modules/"];
+  console.log(config);
+  console.log(config.transform);
+  return config;
+};
