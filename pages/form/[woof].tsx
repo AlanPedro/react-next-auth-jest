@@ -1,14 +1,7 @@
-import { GetServerSidePropsContext, NextPage } from "next";
+import { GetServerSidePropsContext } from "next";
 import { NextAuthOptions, unstable_getServerSession } from "next-auth";
 import authOptions from "../api/auth/[...nextauth]";
-import { useRouter } from "next/router";
-import React from "react";
-
-const FormPage: NextPage = () => {
-  const router = useRouter();
-  // const pageRef = router.query.pageRef as string;
-  return <div>WOof</div>;
-};
+import FormPage from "../../components/pages/FormPage";
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
@@ -30,4 +23,5 @@ export const getServerSideProps = async (
     props: {},
   };
 };
+
 export default FormPage;

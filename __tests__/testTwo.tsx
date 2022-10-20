@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import TestPage from "../pages/form/[woof]";
+import TestPage from "../components/pages/FormPage";
 import { render } from "@testing-library/react";
 import React from "react";
 
