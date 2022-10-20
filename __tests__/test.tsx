@@ -1,6 +1,6 @@
 import { GetServerSidePropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { getServerSideProps } from "../pages/woof";
+import { getServerSideProps } from "../pages/form/[woof]";
 
 const fakeContext = {
   params: { id: "12345" } as ParsedUrlQuery,
